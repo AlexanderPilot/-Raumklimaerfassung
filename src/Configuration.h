@@ -28,24 +28,6 @@
  * Serielle Verbindung
  **************************************************************************/
 #define SERIAL_SPEED 115200
-
-/***************************************************************************
- * Debug Botschaften aktivieren/deaktivieren
- **************************************************************************/
-#define DEBUG_PRINT
-
-#ifdef DEBUG_PRINT
-  #define _DEBUG_BEGIN(x)       Serial.begin(x);
-  #define _DEBUG_PRINT(x)       Serial.print(x);
-  #define _DEBUG_PRINTLN(x)     Serial.println(x);
-  #define _DEBUG_WRITE(x)       Serial.write(x);
-#else
-  #define _DEBUG_BEGIN(x)
-  #define _DEBUG_PRINT(x)
-  #define _DEBUG_PRINTLN(x)
-  #define _DEBUG_WRITE(x)
-#endif
-
 #define PRINT_SEPARATOR         "-------------------------"
 #define PRINT_SEPARATOR_LONG    "--------------------------------------------------"
 
@@ -58,10 +40,11 @@
 /***************************************************************************
  * I2C Einstellungen
  **************************************************************************/
-/* Adresse fuer Sensor XY */
-#define XY_ADDRESS      0x68
+/* Adresse fuer Temperatursensor */
+#define AM2320_ADDRESS  0x05
 #define SDA_PIN         21
 #define SCL_PIN         22
+#define T_SENS_PIN      4
 
 /***************************************************************************
  * Verwendete Sensoren
