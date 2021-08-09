@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "TempSens.h"
 #include <WiFi.h>
-
+#include <PubSubClient.h>
 
 //Initialisierung Sensor
 TempSens tempSens(0); //BMP280, I2C
@@ -10,6 +10,10 @@ TempSens tempSens(0); //BMP280, I2C
 //TempSens tempSens(3); //LM35
 //TempSens tempSens(4); //DHT11
 //TempSens tempSens(5); //TMP35GZ
+
+//Initialisierung MQTT broker
+//const char* mqtt_server = "192.168.1.144";
+const char* mqtt_server = "YOUR_MQTT_BROKER_IP_ADDRESS";
 
 //ISR für Timerinterrupt
 hw_timer_t * timer = NULL;
